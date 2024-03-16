@@ -1,0 +1,22 @@
+{
+  "name": "star23-utils",
+  "version": "1.0.0",
+  "description": "common toolkits",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/star23/star23-utils"
+  },
+  "keywords": [
+    "star23-utils"
+  ],
+  "author": "star23",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/star23/star23-utils/issues"
+  },
+  "homepage": "https://github.com/star23/star23-utils#readme"
+}
