@@ -47,3 +47,35 @@ const Format = {
 };
 
 export default Format;
+
+// ens.js
+
+const { ethers } = require('ethers');
+
+async function resolveENS(ensAddress) {
+  try {
+    const provider = new ethers.providers.JsonRpcProvider('https://mainnet.infura.io/v3/YOUR_INFURA_ID');
+    const ens = await new ethers.Contract('0x57F1889A2cB0C8455273333F2207B39B545a755A', provider);
+    const resolver = await ens.resolve(ensAddress);
+    const ethAddress = resolver['eth'];
+    return ethAddress;
+  } catch (error) {
+    console.error(error);
+    return null;
+  }
+}
+
+async function main() {
+  const ensAddress = 'david.eth'; // Replace with your ENS address
+  const ethAddress = await resolveENS(ensAddress);
+  if (ethAddress) {
+    console.log(`ENS address: ${ensAddress}`);
+    console.log(`Ethereum address: ${ethAddress}`);
+  } else {
+    console.error('Failed to resolve ENS address');
+  }
+}
+
+main();
+
+export default ENS;
